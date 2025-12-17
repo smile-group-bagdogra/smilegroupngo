@@ -1,0 +1,412 @@
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f9fc;
+  color: #333;
+}
+
+header {
+  background: #38b000;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 70px;
+  margin-right: 20px;
+}
+
+header h1 {
+  flex: 1;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: #ffce00;
+  text-align: center;
+  padding: 40px 15px 20px;
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero-img {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 20px;
+  border-radius: 16px;
+}
+
+#toTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 99;
+  display: none; /* Hidden by default */
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 16px;
+  font-size: 20px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s, background 0.3s;
+}
+#toTopBtn:hover {
+  opacity: 1;
+  background: #444;
+}
+
+section {
+ 
+}
+
+
+section {
+   scroll-margin-top: 270px; /* a bit extra for gap */
+  margin: 40px 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(60,60,60,0.1);
+}
+
+.section-img {
+  width: 240px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.fixed-banner {
+  box-shadow: 0 4px 18px rgba(20,20,20,0.10);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: transparent;  /* The actual banner image will show */
+}
+
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 230px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100vw;
+  height: 230px;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.banner-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(20,60,30,0.25);
+  padding: 12px 0;
+}
+
+.banner-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  margin: 0;
+  padding: 0;
+}
+
+.banner-nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.18em;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.banner-nav ul li a:hover,
+.banner-nav ul li a:focus {
+  color: #ffce00;
+}
+
+.banner-text {
+  position: absolute;
+  top: 18%;
+  left: 4%;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(40,40,40,0.4);
+}
+
+body {
+  padding-top: 230px; /* Space for fixed banner */
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  section {
+    scroll-margin-top: 190px;
+  }
+
+
+  .banner {
+    height: 180px;
+  }
+  .banner-img {
+    height: 180px;
+  }
+  .banner-text h1 {
+    font-size: 1.5em;
+  }
+  body {
+    padding-top: 180px;
+  }
+  .banner-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/*
+.activity-img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-top: 10px;
+  transition: transform 0.3s cubic-bezier(.23,.41,.23,.91), box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+  cursor: pointer;
+}*/
+
+/* General responsive image for About/Activities */
+.activity-img {
+  max-width: 100%;   /* never overflow the text/container width */
+  height: auto;      /* keep aspect ratio */
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* If you want a smaller image only in About Us, use a more specific selector */
+#about .activity-img {
+  max-width: 100%;   /* or, for example, 60% if you want it narrower than the text */
+}
+/*
+.activity-img:hover {
+  transform: scale(1.2);
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(60,60,60,0.18);
+}
+*/
+.activity {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+.activity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+@media (max-width: 700px) {
+  .activity-list {
+    flex-direction: column;
+    gap: 18px;
+  }
+/*
+  .activity-img {
+    width: 80vw;
+    max-width: 300px;
+  }*/
+}
+
+.activity img, .achievements-list img {
+  width: 150%;
+  max-width: 220px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+.achievements-list {
+  display: flex;
+  justify-content: center;
+  gap: 35px;   /* Equi-spaced horizontal gap */
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.gallery-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #38b000;
+  background: #fff;
+  color: #38b000;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.gallery-btn.active,
+.gallery-btn:hover {
+  background: #38b000;
+  color: #fff;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  flex: 1 1 220px;
+  max-width: 260px;
+}
+
+.gallery-item p {
+  font-size: 0.85em;
+  margin-top: 6px;
+}
+
+.achieve-img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s cubic-bezier(.23,.41,.23,.91), box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(60,60,60,0.07);
+  cursor: pointer;
+  display: block;
+}
+.achieve-img:hover {
+  transform: scale(1.2);
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(60,60,60,0.18);
+}
+
+@media (max-width: 700px) {
+  .achievements-list {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .achieve-img {
+    width: 90vw;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+.justified-text-container {
+    /* The key property */
+    text-align: justify; 
+    
+    /* Optional: Add other styles for better presentation */
+    width: 600px; /* Define a width so justification has boundaries */
+    border: 1px solid #ccc;
+    padding: 20px;
+    line-height: 1.5; /* Improve readability */
+    font-family: sans-serif;
+  }
+
+/* Modal styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 40px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+}
+
+.close {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+#caption {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+@media (max-width: 700px) {
+  .activity-list, .achievements-list {
+    flex-direction: column;
+    gap: 18px;
+  }
+  header {
+    flex-direction: column;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+}
